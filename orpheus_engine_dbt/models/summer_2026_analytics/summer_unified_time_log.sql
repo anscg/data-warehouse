@@ -2140,7 +2140,7 @@ shrink_daily AS (
     FROM {{ source('shrink', 'hackatime_days') }} hd
     LEFT JOIN {{ source('shrink', 'users') }} u ON u.id = hd.user_id
     WHERE hd.day::text ~ '^\d{4}-\d{2}-\d{2}$'
-      AND hd.day::date BETWEEN DATE '2026-09-29' AND DATE '2026-10-13'
+      AND hd.day::date >= DATE '2026-09-29'
       AND hd.html_seconds > 0
     GROUP BY 1, 2
 ),

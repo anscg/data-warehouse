@@ -4262,8 +4262,11 @@ shrink_replication_config = {
     "streams": {
         "public.users": {
             "select": [
-                "id", "email", "hackatime_account_id", "onboarded_at",
-                "created_at", "last_seen_at",
+                "-hca_subject", "-display_name", "-avatar_url", "-slack_id",
+                "-verification_status", "-eligibility", "-eligibility_at",
+                "-birthdate", "-role", "-hca_token_encrypted",
+                "-hca_token_expires_at", "-hackatime_token_encrypted",
+                "-hackatime_linked_at",
             ],
         },
         "public.hackatime_days": None,
